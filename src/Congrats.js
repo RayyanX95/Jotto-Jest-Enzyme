@@ -1,4 +1,5 @@
 import React from 'react'
+import ProtoTypes from 'prop-types';
 
 const Congrats = (props) => {
   if (props.success) {
@@ -9,9 +10,14 @@ const Congrats = (props) => {
     </div>
   } else return (
     <div data-test="component-congrats" >
-
+      
     </div>
   )
+}
+
+Congrats.propTypes = {
+  success: ProtoTypes.bool.isRequired,
+  wrongAnsMsg: ProtoTypes.string
 }
 
 export default Congrats
