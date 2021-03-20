@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { checkProp, findByTestAttr } from '../test/testUtils';
+import { checkProps, findByTestAttr } from '../test/testUtils';
 import Congrats from './Congrats';
-
 
 const defaultProps = {success: false, wrongAnsMsg: "wrong Answer"};
 const setup = (props = {}) => {
@@ -10,10 +9,10 @@ const setup = (props = {}) => {
   return shallow(<Congrats {...setupProp} />);
 }
 
-test('render without errors', () => {
+test('render without errors', () => { // test is Jest API
   const wrapper = setup();
   const component = findByTestAttr(wrapper, 'component-congrats');
-  expect(component.length).toBe(1)
+  expect(component.length).toBe(1); // `expect() and toBe() are Jest APIs
 });
 test('renders no text when `success` prop is false', () => {
   const wrapper = setup({ success: false });
@@ -30,9 +29,9 @@ test('renders non-empty congrats message when success', () => {
 // PropTypes testing
 test('does not throw warning with expected props', () => {
   const expectedProps = { success: true };
-  checkProp(Congrats, expectedProps);
+  checkProps(Congrats, expectedProps);
 });
 test('Wrong answer message is string!', () => {
   const expectedProps = { wrongAnsMsg: "10", success: false };
-  checkProp(Congrats, expectedProps)
+  checkProps(Congrats, expectedProps)
 })
