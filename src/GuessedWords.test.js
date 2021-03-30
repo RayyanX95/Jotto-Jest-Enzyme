@@ -35,6 +35,7 @@ describe('if there is words guessed', () => {
   ];
   let wrapper;
   beforeEach(() => wrapper = setup(guessedWords));
+
   test('renders without errors', () => {
     const component = findByTestAttr(wrapper, 'component-guessed-words');
     expect(component.length).toBe(1);
@@ -45,6 +46,6 @@ describe('if there is words guessed', () => {
   });
   test('correct number of guessed words', () => {
     const guessedWordNodes = findByTestAttr(wrapper, 'guessed-word');
-    expect(guessedWordNodes.length).toBe(guessedWords.length) 
+    expect(guessedWordNodes.length).toBe(guessedWords.length)
   })
 })
