@@ -1,7 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Input = ({ secretWord }) => {
+const Input = ({ success, secretWord }) => {
+  if(success) {
+    return <div data-test="component-input" >
+
+    </div>
+  }
   const [currentGuess, setCurrentGuess] = React.useState("")
   return (
     <div data-test="component-input" >
