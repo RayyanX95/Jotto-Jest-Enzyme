@@ -10,7 +10,7 @@ const Input = ({ success, secretWord }) => {
   const [currentGuess, setCurrentGuess] = React.useState("")
   return (
     <div data-test="component-input" >
-      <from className="form-inline" >
+      <form className="form-inline" >
         <input
           data-test="input-box"
           type="text"
@@ -29,7 +29,7 @@ const Input = ({ success, secretWord }) => {
           }}
           className="btn btn-primary mb-2"
         >Submit</button>
-      </from>
+      </form>
     </div>
   )
 }
