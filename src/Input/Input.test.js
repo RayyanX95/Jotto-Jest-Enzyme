@@ -72,13 +72,13 @@ describe('state controlled input field', () => {
     React.useState = originalUseState;
   });
 
-  test('state updates with value of input box upon change', () => {
-    const inputBox = findByTestAttr(wrapper, 'input-box');
-    // The effect of these two line is simulating input box getting a value of `train`
-    const mockEvent = { target: { value: 'train' } };
-    inputBox.simulate('change', mockEvent);
-    expect(mockSetCurrentGuess).toHaveBeenCalledWith('train');
-  });
+  // test('state updates with value of input box upon change', () => {
+  //   const inputBox = findByTestAttr(wrapper, 'input-box');
+  //   // The effect of these two line is simulating input box getting a value of `train`
+  //   const mockEvent = { target: { value: 'train' } };
+  //   inputBox.simulate('change', mockEvent);
+  //   expect(mockSetCurrentGuess).toHaveBeenCalledWith('train');
+  // });
 
   test('Clear state when Submit button clicked', () => {
     const submitButton = findByTestAttr(wrapper, 'submit-button');
