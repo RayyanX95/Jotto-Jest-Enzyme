@@ -5,6 +5,7 @@ import GuessedWords from './GuessedWords';
 import Input from './Input/Input';
 import { getSecretWord } from './actions'
 
+// App state before adding redux to it
 const App = () => {
   // TODO: get props from shared state
   const success = false;
